@@ -1,0 +1,179 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/* root */
+:root {
+  /* Primary */
+  --White: white;
+  --Black: black;
+  --Purple-600: hsl(246, 80%, 60%);
+  --Orange-300: hsl(15, 100%, 70%);
+  --Blue-300: hsl(195, 74%, 62%);
+  --Pink-400: hsl(348, 100%, 68%);
+  --Green-400: hsl(145, 58%, 55%);
+  --Purple-700: hsl(264, 64%, 52%);
+  --Yellow-300: hsl(43, 84%, 65%);
+
+  /* Neutral */
+  --Navy-950: hsl(226, 43%, 10%);
+  --Navy-900: hsl(235, 46%, 20%);
+  --Navy-600: hsl(235, 46%, 40%);
+  --Purple-500: hsl(235, 45%, 61%);
+  --Navy-200: hsl(236, 100%, 87%);
+
+  /* Font */
+  --fs-lg: 1.125rem;
+  --ff-rubik: 'Rubik', sans-serif;
+  --fw-extra-light: 300;
+  --fw-light: 400;
+  --fw-normal: 500;
+}
+
+/* page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-rubik);
+  background: var(--Navy-950);
+  color: var(--Navy-200);
+}
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* Styling */
+.container {
+  display: flex;
+  justify-content: center;
+}
+.content-wrapper {
+  min-width: 375px;
+  padding: 4rem 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Cards */
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Person Card */
+.person {
+  background: var(--Purple-600);
+  border-radius: 1rem;
+  display: flex;
+  gap: 1.1rem;
+  justify-content: center;
+  padding-block: 2rem;
+}
+.person-card {
+  background: var(--Navy-900);
+}
+.person-image {
+  height: 100%;
+}
+.person-image > img {
+  display: block;
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+.person-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.person-name > small {
+  font-size: 1rem;
+}
+.person-name > h2 {
+  font-weight: var(--fw-extra-light);
+  color: var(--White);
+}
+.sorting {
+  font-size: var(--fs-lg);
+  display: flex;
+  justify-content: space-evenly;
+  padding-block: 1.5rem;
+}
+.active {
+  color: var(--White);
+}
+.sorting > button:hover {
+  color: var(--White);
+}
+
+/* Track Card */
+.track-background {
+  height: 2.2rem;
+}
+.track-content {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--Navy-900);
+  border-radius: 1rem;
+  padding: 2rem 2rem;
+}
+.track-content:hover {
+  background: var(--Navy-600);
+  cursor: pointer;
+}
+.track-content:hover:has(.track-head button:hover) {
+  background: var(--Navy-900);
+}
+.track-head {
+  display: flex;
+  justify-content: space-between;
+}
+.track-head button {
+  position: relative;
+  z-index: 2;
+}
+.track-head button:hover {
+  color: var(--White);
+}
+.track-time {
+  display: flex;
+  justify-content: space-between;
+}
+.track-head-name {
+  color: var(--White);
+}
+.track-time-current {
+  font-size: 2rem;
+  color: var(--White);
+  font-weight: var(--fw-extra-light);
+}
+.track-time-previous {
+  font-size: 0.875rem;
+  margin-block: auto;
+}
+
+/* Track Card Backgrounds */
+.track-work {
+  background: var(--Orange-300) url('images/icon-work.svg') no-repeat 90% -13%;
+}
+.track-play {
+  background: var(--Blue-300) url('images/icon-play.svg') no-repeat 90% -13%;
+}
+.track-study {
+  background: var(--Pink-400) url('images/icon-study.svg') no-repeat 90% -13%;
+}
+.track-exercise {
+  background: var(--Green-400) url('images/icon-exercise.svg') no-repeat 90% -13%;
+}
+.track-social {
+  background: var(--Purple-700) url('images/icon-social.svg') no-repeat 90% -13%;
+}
+.track-care {
+  background: var(--Yellow-300) url('images/icon-self-care.svg') no-repeat 90% -13%;
+}
