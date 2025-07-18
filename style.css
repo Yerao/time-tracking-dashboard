@@ -21,6 +21,8 @@
   --Navy-200: hsl(236, 100%, 87%);
 
   /* Font */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
   --fs-lg: 1.125rem;
   --ff-rubik: 'Rubik', sans-serif;
   --fw-extra-light: 300;
@@ -59,7 +61,6 @@ button {
 /* Cards */
 .card {
   border-radius: 1rem;
-  overflow: hidden;
 }
 
 /* Person Card */
@@ -160,20 +161,82 @@ button {
 
 /* Track Card Backgrounds */
 .track-work {
-  background: var(--Orange-300) url('images/icon-work.svg') no-repeat 90% -13%;
+  background: url('images/icon-work.svg') no-repeat 90% -13%,
+    linear-gradient(to top, var(--Navy-900) 15%, var(--Orange-300) 15%);
 }
 .track-play {
-  background: var(--Blue-300) url('images/icon-play.svg') no-repeat 90% -13%;
+  background: url('images/icon-play.svg') no-repeat 90% -13%,
+    linear-gradient(to top, var(--Navy-900) 15%, var(--Blue-300) 15%);
 }
 .track-study {
-  background: var(--Pink-400) url('images/icon-study.svg') no-repeat 90% -13%;
+  background: url('images/icon-study.svg') no-repeat 90% -13%,
+    linear-gradient(to top, var(--Navy-900) 15%, var(--Pink-400) 15%);
 }
 .track-exercise {
-  background: var(--Green-400) url('images/icon-exercise.svg') no-repeat 90% -13%;
+  background: url('images/icon-exercise.svg') no-repeat 90% -13%,
+    linear-gradient(to top, var(--Navy-900) 15%, var(--Green-400) 15%);
 }
 .track-social {
-  background: var(--Purple-700) url('images/icon-social.svg') no-repeat 90% -13%;
+  background: url('images/icon-social.svg') no-repeat 90% -13%,
+    linear-gradient(to top, var(--Navy-900) 15%, var(--Purple-700) 15%);
 }
 .track-care {
-  background: var(--Yellow-300) url('images/icon-self-care.svg') no-repeat 90% -13%;
+  background: url('images/icon-self-care.svg') no-repeat 90% -13%,
+    linear-gradient(to top, var(--Navy-900) 15%, var(--Yellow-300) 15%);
+}
+
+/* Responsive */
+@media (min-width: 700px) {
+  .container {
+    height: 100vh;
+    align-items: center;
+  }
+  .content-wrapper {
+    width: 1100px;
+    padding: 4rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Person Card */
+  .person-card {
+    grid-area: 1/ 1/ 3/ 2;
+  }
+  .person {
+    flex-direction: column;
+    padding-inline: 24px;
+  }
+  .person-name > h2 {
+    font-size: 2rem;
+  }
+  .person-name > small {
+    font-size: var(--fs-xs);
+  }
+  .sorting {
+    flex-direction: column;
+    padding-inline: 1.5rem;
+    gap: 1rem;
+    font-size: var(--fs-sm);
+  }
+
+  /* Track Card */
+  .track-content {
+    padding: 1.5rem;
+  }
+  .track-head-name {
+    font-size: var(--fs-sm);
+  }
+  .track-head > button {
+    display: flex;
+    align-items: center;
+  }
+  .track-time {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .track-time-current {
+    font-size: 2.5rem;
+  }
 }
